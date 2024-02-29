@@ -43,3 +43,8 @@ This journey through the project has been a testament to the efficacy of ensembl
 Bu projenin final adımı, geliştirdiğim Oylama Sınıflandırıcısını kullanarak test setindeki obezite seviyelerini tahmin etmekti. Tahminler özenle biçimlendirildi ve Kaggle yarışmasında **0.91184** puan alarak modelimizin performansını sergileyen bir gönderim dosyasına kaydedildi.
 
 Bu proje yolculuğu, obezite tahmini gibi karmaşık senaryolarda tahminleri rafine etme kapasitesi ile makine öğrenimi ansambl yöntemlerinin etkinliğine bir tanıklıktır. Sağlıkla ilgili gerçek dünya zorluğuna uygulanan makine öğreniminin ayrıntılarına dair bu deneyim, veri bilimi ve sağlık bilimleri arasındaki sinerjiyi zengin bir şekilde göstermiş ve ileri analitik uygulamalarının gerçek sağlık sorunlarına nasıl değerli içgörüler sağlayabileceğini ortaya koymuştur.
+
+
+**Kaggle Notebook Link = https://www.kaggle.com/code/ahtabekdas/obesity-risk-multi-class-prediction-eng-tr**
+
+**Kaggle Project Link = https://www.kaggle.com/competitions/playground-series-s4e2**
