@@ -1,24 +1,45 @@
-# Obesity Risk Multi Class Prediction
-This project focuses on predicting the risk of obesity among individuals based on their eating habits and physical condition using various machine learning models. The objective is to classify individuals into one of the seven obesity levels ranging from 'Insufficient Weight' to 'Obesity Type III'.
-# Project Overview
-* Data Preprocessing: The dataset undergoes a comprehensive preprocessing phase, including handling missing values, feature engineering to create new insightful features like BMI (Body Mass Index) categories, and transforming categorical variables for machine learning readiness.
-* Feature Engineering: New features such as BMI, Age Categories, Healthy Lifestyle Score, Active and Passive Transport, and Total Water Intake were introduced to provide more depth and improve model accuracy.
-* Model Training and Optimization: Multiple models including CatBoost, XGBoost, LightGBM, Gradient Boosting, and RandomForest were trained. Hyperparameter tuning was performed with Optuna to find the optimal settings for each model.
-* Ensemble Learning: The project leverages ensemble methods, particularly Voting Classifier, to combine the predictions of the individual models. This approach aims to improve prediction accuracy by considering the strengths of each base model.
-* Evaluation: Models were evaluated based on accuracy, and the best-performing models were identified through comparative analysis.
-# Key Findings
-* The combination of CatBoost and XGBoost models using a soft voting mechanism achieved the highest accuracy, highlighting the effectiveness of ensemble methods in improving predictions.
-* Feature engineering played a crucial role in enhancing model performance by introducing new perspectives and information extracted from the raw data.
+# Overview / Genel Bakış
+**ENG**
+In this project, I endeavored to tackle the pressing issue of obesity prediction through a machine learning lens. The aim was to create a robust predictive model that leverages a variety of algorithms to accurately classify individuals' obesity levels based on a series of health-related features. The dataset, sourced from a Kaggle competition, provided a rich foundation for feature engineering, analysis, and model training.
 
-# Turkish:
-# Obezite Riski Çok Sınıflı Tahmin
-Bu proje, bireylerin yeme alışkanlıkları ve fiziksel durumlarına dayanarak obezite risklerinin tahmin edilmesine odaklanmaktadır. Amaç, bireyleri 'Yetersiz Ağırlık' ile 'Obezite Tip III' arasında değişen yedi obezite seviyesinden birine sınıflandırmaktır.
-#Proje Genel Bakış
-* Veri Ön İşleme: Veri seti, eksik değerlerin ele alınması, yeni anlamlı özelliklerin oluşturulması gibi kapsamlı bir ön işleme aşamasından geçmektedir. BMI (Vücut Kitle İndeksi) kategorileri gibi yeni özellikler eklenmiş ve makine öğrenimi için kategorik değişkenler dönüştürülmüştür.
-* Özellik Mühendisliği: BMI, Yaş Kategorileri, Sağlıklı Yaşam Skoru, Aktif ve Pasif Ulaşım, Toplam Su Tüketimi gibi yeni özellikler tanıtarak model doğruluğunu iyileştirmek ve veriye daha derin bir bakış açısı kazandırmak amaçlanmıştır.
-* Model Eğitimi ve Optimizasyon: CatBoost, XGBoost, LightGBM, Gradient Boosting ve RandomForest dahil olmak üzere çoklu modeller eğitilmiştir. Optuna ile her model için hiperparametre ayarlaması yapılarak optimal ayarlar bulunmuştur.
-* Topluluk Öğrenimi: Proje, bireysel modellerin tahminlerini birleştirmek için topluluk yöntemleri, özellikle Voting Classifier kullanmaktadır. Bu yaklaşım, her temel modelin güçlü yönlerini dikkate alarak tahmin doğruluğunu artırmayı amaçlamaktadır.
-* Değerlendirme: Modeller doğruluk bazında değerlendirilmiş ve karşılaştırmalı analiz ile en iyi performans gösteren modeller belirlenmiştir.
-# Temel Bulgular
-* CatBoost ve XGBoost modellerinin yumuşak oylama mekanizması kullanılarak kombinasyonu en yüksek doğruluğa ulaşmış, topluluk yöntemlerinin tahminleri iyileştirmede etkili olduğunu göstermiştir.
-* Özellik mühendisliği, ham veriden elde edilen yeni bilgileri ve perspektifleri tanıtarak model performansını artırmada önemli bir rol oynamıştır.
+**TR**
+Bu projede, obezite tahmini sorununu makine öğrenimi perspektifinden ele almayı amaçladım. Bir dizi sağlıkla ilgili özelliklere dayanarak bireylerin obezite seviyelerini doğru bir şekilde sınıflandırabilen güçlü bir tahmin modeli oluşturmak hedeflendi. Kaggle yarışmasından elde edilen veri seti, özellik mühendisliği, analiz ve model eğitimi için zengin bir temel sundu.
+
+# Data Engineering and Analysis / Veri Mühendisliği ve Analizi
+**ENG**
+The initial phase involved importing essential libraries and loading the dataset for preprocessing. I performed comprehensive feature engineering to enhance the dataset, which included creating new features such as BMI categories, age groups, and a healthy lifestyle score. Notably, I addressed discrepancies in the test data by aligning categorical values with the training set.
+
+**TR**
+İlk aşama, temel kütüphaneleri içe aktarmak ve veri setini ön işleme için yüklemekle başladı. Veri setini iyileştirmek için kapsamlı özellik mühendisliği gerçekleştirildi; bu, BMI kategorileri, yaş grupları ve sağlıklı yaşam puanı gibi yeni özelliklerin oluşturulmasını içerdi. Test verilerindeki tutarsızlıklar, eğitim setiyle kategorik değerleri hizalayarak giderildi.
+
+# Visualization for Insights / İçgörü için Görselleştirme
+**ENG**
+Data visualization played a crucial role in this study, offering a window into the patterns and relationships within the data. Various plots, such as BMI distribution and the impact of active transportation on obesity status, were crafted using libraries like Matplotlib and Seaborn. These visualizations not only provided insights but also guided the feature engineering process.
+
+**TR**
+Bu çalışmada veri görselleştirme, veriler içindeki desenleri ve ilişkileri gösteren önemli bir rol oynadı. BMI dağılımı ve aktif ulaşımın obezite durumu üzerindeki etkisi gibi çeşitli grafikler, Matplotlib ve Seaborn kütüphaneleri kullanılarak hazırlandı. Bu görselleştirmeler sadece içgörü sağlamakla kalmadı, aynı zamanda özellik mühendisliği sürecini yönlendirdi.
+
+# Model Development with Optuna Optimization / Optuna Optimizasyonu ile Model Geliştirme
+**ENG**
+I employed Optuna for hyperparameter tuning to determine the optimal settings for several classifiers, including CatBoost, XGBoost, LightGBM, Gradient Boosting, and Random Forest. The models were trained and evaluated individually, with accuracy as the primary metric. I found that the CatBoost and XGBoost models, when combined, yielded the most promising results.
+
+**TR**
+Birçok sınıflandırıcı için optimal ayarları belirlemek amacıyla hiperparametre ayarlaması için Optuna kullandım. Modeller tek tek eğitildi ve değerlendirildi, ana metrik olarak doğruluk kullanıldı. CatBoost ve XGBoost modellerinin birleşimi en umut verici sonuçları verdi.
+
+# Ensemble Learning with Voting Classifier / Oylama Sınıflandırıcısı ile Ansambl Öğrenme
+**ENG**
+Seeking to amplify the predictive power, I utilized a Voting Classifier that harnessed the strengths of the individual models. The soft voting mechanism was applied to combine predictions, leading to a noteworthy improvement in the model's accuracy.
+
+**TR**
+Tahmin gücünü artırmak amacıyla, bireysel modellerin güçlerini kullanan bir Oylama Sınıflandırıcısı kullandım. Tahminleri birleştirmek için yumuşak oylama mekanizması uygulandı, bu da modelin doğruluğunda dikkate değer bir iyileşme sağladı.
+
+# Conclusion and Submission / Sonuç ve Gönderim
+**ENG**
+The final step of this project was to predict obesity levels on the test set using the Voting Classifier I developed. The predictions were carefully formatted and saved into a submission file, which achieved a score of **0.91184** in the Kaggle competition, showcasing the performance of our model.
+
+This journey through the project has been a testament to the efficacy of ensemble methods in machine learning and their capacity to refine predictions in complex scenarios like obesity prediction. The experience has been an enriching demonstration of the synergy between data science and healthcare, providing valuable insights into the practical application of advanced analytics in real-world health challenges.
+
+**TR**
+Bu projenin final adımı, geliştirdiğim Oylama Sınıflandırıcısını kullanarak test setindeki obezite seviyelerini tahmin etmekti. Tahminler özenle biçimlendirildi ve Kaggle yarışmasında **0.91184** puan alarak modelimizin performansını sergileyen bir gönderim dosyasına kaydedildi.
+
+Bu proje yolculuğu, obezite tahmini gibi karmaşık senaryolarda tahminleri rafine etme kapasitesi ile makine öğrenimi ansambl yöntemlerinin etkinliğine bir tanıklıktır. Sağlıkla ilgili gerçek dünya zorluğuna uygulanan makine öğreniminin ayrıntılarına dair bu deneyim, veri bilimi ve sağlık bilimleri arasındaki sinerjiyi zengin bir şekilde göstermiş ve ileri analitik uygulamalarının gerçek sağlık sorunlarına nasıl değerli içgörüler sağlayabileceğini ortaya koymuştur.
